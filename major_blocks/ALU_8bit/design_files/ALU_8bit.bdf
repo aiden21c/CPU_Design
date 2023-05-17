@@ -669,6 +669,6 @@ refer to the applicable agreement for further details.
 (text "Adder=00" (rect 96 216 157 235)(font "Intel Clear" (font_size 8)))
 (text "Equal=01" (rect 96 232 153 251)(font "Intel Clear" (font_size 8)))
 (text "Less=10" (rect 96 248 146 267)(font "Intel Clear" (font_size 8)))
-(text "True= 1" (rect 960 56 1007 75)(font "Intel Clear" (font_size 8)))
+(text "True= 1" (rect 960 48 1007 67)(font "Intel Clear" (font_size 8)))
 (text "False= 0" (rect 1032 56 1082 75)(font "Intel Clear" (font_size 8)))
 (text "Greater=11" (rect 168 232 237 251)(font "Intel Clear" (font_size 8)))
