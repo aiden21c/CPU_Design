@@ -1,0 +1,25 @@
+% multiple-line comment
+multiple-line comment %
+-- single-line comment
+DEPTH = 256; -- The size of memory in words
+WIDTH = 24; -- The size of data in bits 
+ADDRESS_RADIX = UNS; -- The radix for address values 
+DATA_RADIX = UNS; -- The radix for data values 
+CONTENT -- start of (address : data pairs) 
+BEGIN
+    0           : 100; -- memory address : data 
+    1           : 101; 
+    2           : 102; 
+    3           : 103; 
+    4           : 104;
+    5           : 200;
+    6           : 106;
+    7           : 107;
+    8           : 108; 
+    9           : 109;
+    10          : 110;
+    11          : 111;
+    12          : 112;
+    [13..255]   : 0;
+END;
+

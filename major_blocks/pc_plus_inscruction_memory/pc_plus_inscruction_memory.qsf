@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-# Date created = 14:42:33  May 09, 2023
+# Date created = 23:54:02  May 19, 2023
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		cpu_design_assignment_defaults.qdf
+#		pc_plus_inscruction_memory_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,10 +39,42 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7
-set_global_assignment -name TOP_LEVEL_ENTITY cpu_design
+set_global_assignment -name TOP_LEVEL_ENTITY pc_plus_inscruction_memory
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:42:33  MAY 09, 2023"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:54:02  MAY 19, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name BSF_FILE design_files/RippleCarryAdder_24Bit.bsf
+set_global_assignment -name BDF_FILE design_files/RippleCarryAdder_24Bit.bdf
+set_global_assignment -name BSF_FILE design_files/RippleCarryAdder_8Bit.bsf
+set_global_assignment -name BDF_FILE design_files/RippleCarryAdder_8Bit.bdf
+set_global_assignment -name BSF_FILE design_files/rippleCarryAdder_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/rippleCarryAdder_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/program_counter_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/program_counter_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_4way_24bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_4way_24bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_4way_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_4way_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_4way_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_4way_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_4way_1bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_4way_1bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_2way_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_2way_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexer_2way_1bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexer_2way_1bit.bdf
+set_global_assignment -name BSF_FILE design_files/instruction_memory.bsf
+set_global_assignment -name BDF_FILE design_files/instruction_memory.bdf
+set_global_assignment -name BSF_FILE design_files/halfAdder.bsf
+set_global_assignment -name BDF_FILE design_files/halfAdder.bdf
+set_global_assignment -name BSF_FILE design_files/fullAdder.bsf
+set_global_assignment -name BDF_FILE design_files/fullAdder.bdf
+set_global_assignment -name BSF_FILE design_files/d_flip_flop_24bit.bsf
+set_global_assignment -name BDF_FILE design_files/d_flip_flop_24bit.bdf
+set_global_assignment -name BSF_FILE design_files/d_flip_flop_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/d_flip_flop_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/d_flip_flop_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/d_flip_flop_4bit.bdf
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
@@ -54,19 +86,9 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name SEARCH_PATH "e:\\eeet2261_cpu_design\\cpu_design\\design_files"
+set_global_assignment -name BDF_FILE design_files/pc_plus_inscruction_memory.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name BSF_FILE design_files/major_blocks/program_counter_8bit.bsf
-set_global_assignment -name BDF_FILE design_files/major_blocks/program_counter_8bit.bdf
-set_global_assignment -name BDF_FILE design_files/arithmetic/RippleCarryAdder_24Bit.bdf
-set_global_assignment -name BDF_FILE design_files/major_blocks/memory/instruction_memory.bdf
-set_global_assignment -name BDF_FILE design_files/major_blocks/program_counter_24bit.bdf
-set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_8bit.bdf
-set_global_assignment -name BDF_FILE design_files/major_blocks/ALU_8bit.bdf
-set_global_assignment -name BDF_FILE design_files/cpu_design.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/Waveform.vwf
