@@ -131,7 +131,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"LPM_FILE"
-		"instruction_memory.mif"
+		"C:/Users/aiden/Documents/Quartus-lite-20.1.1.720-windows/projects/ComputerArchitecture/EEET2261_CPU_Design/cpu_design/resources/instruction_memory.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -163,7 +163,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 96 80)(pt 96 16))
 		(line (pt 16 80)(pt 16 16))
 	)
-	(annotation_block (parameter)(rect 496 32 795 165))
+	(annotation_block (parameter)(rect 496 32 1533 165))
 )
 (connector
 	(pt 496 216)

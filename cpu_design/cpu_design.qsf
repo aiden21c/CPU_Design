@@ -60,13 +60,55 @@ set_global_assignment -name SEARCH_PATH "e:\\eeet2261_cpu_design\\cpu_design\\de
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name BSF_FILE design_files/multiplexers/selector_8way.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/selector_8way.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_8way_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_8way_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_4way_24bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_4way_24bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_4way_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_4way_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_4way_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_4way_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_2way_24bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_24bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_2way_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_2way_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/multiplexers/multiplexer_2way_1bit.bsf
+set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_1bit.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/memory/program_memory.bsf
+set_global_assignment -name BDF_FILE design_files/major_blocks/memory/program_memory.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/memory/instruction_memory.bsf
+set_global_assignment -name BDF_FILE design_files/major_blocks/memory/instruction_memory.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/register_file_8bit_8reg.bsf
+set_global_assignment -name BDF_FILE design_files/major_blocks/register_file_8bit_8reg.bdf
+set_global_assignment -name BDF_FILE design_files/major_blocks/program_counter_24bit.bdf
 set_global_assignment -name BSF_FILE design_files/major_blocks/program_counter_8bit.bsf
 set_global_assignment -name BDF_FILE design_files/major_blocks/program_counter_8bit.bdf
-set_global_assignment -name BDF_FILE design_files/arithmetic/RippleCarryAdder_24Bit.bdf
-set_global_assignment -name BDF_FILE design_files/major_blocks/memory/instruction_memory.bdf
-set_global_assignment -name BDF_FILE design_files/major_blocks/program_counter_24bit.bdf
-set_global_assignment -name BDF_FILE design_files/multiplexers/multiplexer_2way_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/pc_plus_inscruction_memory.bsf
+set_global_assignment -name BDF_FILE design_files/major_blocks/pc_plus_inscruction_memory.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/control_unit_version1_nojalr.bsf
+set_global_assignment -name BDF_FILE design_files/major_blocks/control_unit_version1_nojalr.bdf
+set_global_assignment -name BSF_FILE design_files/major_blocks/ALU_8bit.bsf
 set_global_assignment -name BDF_FILE design_files/major_blocks/ALU_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/flip_flops/d_flip_flop_24bit.bsf
+set_global_assignment -name BDF_FILE design_files/flip_flops/d_flip_flop_24bit.bdf
+set_global_assignment -name BSF_FILE design_files/flip_flops/d_flip_flop_8bit.bsf
+set_global_assignment -name BDF_FILE design_files/flip_flops/d_flip_flop_8bit.bdf
+set_global_assignment -name BSF_FILE design_files/flip_flops/d_flip_flop_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/flip_flops/d_flip_flop_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/arithmetic/RippleCarryAdder_24Bit.bsf
+set_global_assignment -name BDF_FILE design_files/arithmetic/RippleCarryAdder_24Bit.bdf
+set_global_assignment -name BSF_FILE design_files/arithmetic/RippleCarryAdder_8Bit.bsf
+set_global_assignment -name BDF_FILE design_files/arithmetic/RippleCarryAdder_8Bit.bdf
+set_global_assignment -name BSF_FILE design_files/arithmetic/rippleCarryAdder_4bit.bsf
+set_global_assignment -name BDF_FILE design_files/arithmetic/rippleCarryAdder_4bit.bdf
+set_global_assignment -name BSF_FILE design_files/arithmetic/halfAdder.bsf
+set_global_assignment -name BDF_FILE design_files/arithmetic/halfAdder.bdf
+set_global_assignment -name BSF_FILE design_files/arithmetic/fullAdder.bsf
+set_global_assignment -name BDF_FILE design_files/arithmetic/fullAdder.bdf
 set_global_assignment -name BDF_FILE design_files/cpu_design.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/Waveform.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

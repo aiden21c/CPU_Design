@@ -17,7 +17,7 @@ min:
         # t4 is used as a temporary to store the value at a0
 
         # Save the required temporary registers in the stack
-        addi sp, sp, -16        # Decremenet the stack 8 bytes
+        addi sp, sp, -16        # Decremenet the stack 16 bytes
         sw t1, 0(sp)            # Store t1 in the first 4 bytes
         sw t2, 4(sp)            # Store t2 in the next 4 bytes
         sw t3, 8(sp)            # Store t3 in the third 4 bytes
