@@ -12,7 +12,8 @@ ADDRESS_RADIX = UNS; -- The radix for address values
 DATA_RADIX = HEX; -- The radix for data values 
 CONTENT -- start of (address : data pairs) 
 BEGIN
-    0           : 0x04800; -- addi t2, t2, 0    (00000000 010 010 0000000 000)
+    0           : 0xF4800; -- addi t2, t2, 0    (00001111 010 010 0000000 000)
+    -- 0           : 0x04800; -- addi t2, t2, 0    (00000000 010 010 0000000 000)
     1           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)
     2           : 0x03C05; -- lw t1, 0(a0)      (00000000 001 111 0000000 101)
 -- Loop:
@@ -27,6 +28,6 @@ BEGIN
 -- End
     10          : 0x31401; -- jal loop (00000011 000 101 0000000 001)
 -- Done
-    11          : 0xEC00;  addi a0, t3, 0 (00000000 111 011 0000000 000)
+    11          : 0xEC00;  -- addi a0, t3, 0 (00000000 111 011 0000000 000)
     [12..255]   : 0;
 END;

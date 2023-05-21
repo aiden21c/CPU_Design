@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 128 240 296 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "k[7..0]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "k[7..0]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 128 304 296 320)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IMM[7..0]" (rect 5 0 52 12)(font "Arial" ))
+	(text "IMM[7..0]" (rect 5 0 51 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -382,11 +382,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 872 464)
 )
 (connector
-	(text "S[0]" (rect 585 56 603 73)(font "Intel Clear" ))
-	(pt 288 72)
-	(pt 608 72)
-)
-(connector
 	(text "S[1]" (rect 579 80 597 97)(font "Intel Clear" ))
 	(pt 288 96)
 	(pt 608 96)
@@ -431,6 +426,11 @@ https://fpgasoftware.intel.com/eula.
 	(pt 608 96)
 	(pt 608 312)
 	(bus)
+)
+(connector
+	(text "S[0]" (rect 585 56 603 73)(font "Intel Clear" ))
+	(pt 288 72)
+	(pt 608 72)
 )
 (junction (pt 640 248))
 (junction (pt 640 192))
