@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,12 +16,13 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 344 264 512 280)
+	(rect 336 240 504 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "RdAddr[7..0]" (rect 5 0 67 12)(font "Arial" ))
 	(pt 168 8)
@@ -207,7 +208,7 @@ refer to the applicable agreement for further details.
 	)
 	(parameter
 		"LPM_FILE"
-		"E:/EEET2261_CPU_Design/cpu_design/resources/program_memory.mif"
+		"C:/Users/aiden/Documents/Quartus-lite-20.1.1.720-windows/projects/ComputerArchitecture/EEET2261_CPU_Design/cpu_design/resources/program_memory.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -264,11 +265,7 @@ refer to the applicable agreement for further details.
 		(line (pt 16 168)(pt 16 16))
 		(line (pt 144 168)(pt 144 16))
 	)
-	(annotation_block (parameter)(rect 672 56 1245 246))
-)
-(connector
-	(pt 512 304)
-	(pt 272 304)
+	(annotation_block (parameter)(rect 672 56 1720 246))
 )
 (connector
 	(pt 272 304)
@@ -288,7 +285,34 @@ refer to the applicable agreement for further details.
 	(pt 512 392)
 )
 (connector
+	(pt 272 304)
+	(pt 512 304)
+)
+(connector
+	(pt 512 272)
+	(pt 504 272)
+	(bus)
+)
+(connector
+	(pt 504 272)
+	(pt 504 248)
+	(bus)
+)
+(connector
+	(pt 464 288)
+	(pt 464 320)
+)
+(connector
+	(pt 464 320)
+	(pt 512 320)
+)
+(connector
 	(pt 512 288)
+	(pt 464 288)
+)
+(connector
+	(pt 464 288)
 	(pt 360 288)
 )
 (junction (pt 272 336))
+(junction (pt 464 288))

@@ -8,7 +8,9 @@
 
 | pc_func[1] | pc_func[0] | Action |
 | --- | --- | --- |
-| 1 | 0 | PC = PC |
-| 1 | 1 | PC = PC | 
+| 0 | 0 | PC = PC |
+| 1 | 0 | PC = PC | 
 | 0 | 1 | PC = PC + k |
-| 0 | 0 | PC = IMM |
+| 1 | 1 | PC = IMM |
+
+

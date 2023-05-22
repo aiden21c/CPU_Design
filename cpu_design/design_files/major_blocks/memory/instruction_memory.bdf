@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,7 +16,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -119,7 +120,7 @@ refer to the applicable agreement for further details.
 		(pt 112 48)
 		(output)
 		(text "q[LPM_WIDTH-1..0]" (rect 80 41 188 55)(font "Arial" (font_size 8)))
-		(text "q[]" (rect 80 41 91 55)(font "Arial" (font_size 8)))
+		(text "q[]" (rect 80 41 94 55)(font "Arial" (font_size 8)))
 		(line (pt 96 48)(pt 112 48)(line_width 3))
 	)
 	(parameter
@@ -130,7 +131,7 @@ refer to the applicable agreement for further details.
 		(type "PARAMETER_STRING")	)
 	(parameter
 		"LPM_FILE"
-		"E:/EEET2261_CPU_Design/cpu_design/resources/instruction_memory.mif"
+		"C:/Users/aiden/Documents/Quartus-lite-20.1.1.720-windows/projects/ComputerArchitecture/EEET2261_CPU_Design/cpu_design/resources/instruction_memory.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -162,7 +163,7 @@ refer to the applicable agreement for further details.
 		(line (pt 96 80)(pt 96 16))
 		(line (pt 16 80)(pt 16 16))
 	)
-	(annotation_block (parameter)(rect 496 32 1058 165))
+	(annotation_block (parameter)(rect 496 32 1538 165))
 )
 (connector
 	(pt 496 216)

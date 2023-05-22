@@ -10,20 +10,21 @@ ADDRESS_RADIX = UNS; -- The radix for address values
 DATA_RADIX = UNS; -- The radix for data values 
 CONTENT -- start of (address : data pairs) 
 BEGIN
-	0  		:   2;
-	1  		:   13;
-	2  		:   54;
-	3  		:   98;
-	4  		:   45;
-	5  		:   20;	
-	6  		:   10;
-	7  		:   5;
-	8  		:   99;
-	9  		:   34;
-	10 		:   1;
-	11 		:   78;
-	12 		:   3;
-	13 		:   98;
-	14 		:   69;
-	[15..255]	:   0;
+	0		:	16;			-- Store the first out of bounds index
+	1  		:   2;			-- The first element in the array
+	2  		:   13;
+	3  		:   54;
+	4  		:   98;
+	5  		:   45;
+	6  		:   20;	
+	7  		:   10;
+	8  		:   5;
+	9  		:   99;
+	10 		:   34;
+	11 		:   1;
+	12 		:   78;
+	13 		:   3;
+	14 		:   98;
+	15 		:   69;			-- The last element in the array
+	[16..255]	:   0;
 END;

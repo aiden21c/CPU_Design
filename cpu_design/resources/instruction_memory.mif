@@ -12,24 +12,23 @@ ADDRESS_RADIX = UNS; -- The radix for address values
 DATA_RADIX = HEX; -- The radix for data values 
 CONTENT -- start of (address : data pairs) 
 BEGIN
-    0           : 0xF4800; -- addi t2, t2, 0    	(00001111 010 010 0000000 000)
-    -- 0           : 0x04800; -- addi t2, t2, 0   	(00000000 010 010 0000000 000)
-    -- 1           : 0x06800; -- addi t3, t2, 0    	(00000000 011 010 0000000 000)
-    1           : 0xA6800; -- addi t3, t2, 0    	(00001010 011 010 0000000 000)
-
-    2           : 0x03C05; -- lw t1, 0(a0)      (00000000 001 111 0000000 101) change read address to [9..3]
+    0           : 0x0FC05; -- lw, a1, 0(a1)     (00000000 111 111 0000000 101)      Store the index of the last value in the array into a1
+    1           : 0x1D800; -- addi, a0, a0, 1   (00000001 110 110 0000000 000)      Set the pointer to the first value in memory in a0 to be 1
+    2           : 0x04800; -- addi t2, t2, 0   	(00000000 010 010 0000000 000)      Start the counter for the loop (t2) at zero
+    3           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)      Set the current smallest index to the first element
+    4           : 0x03805; -- lw t1, 0(a0)      (00000000 001 110 0000000 101)      Load the value stored at the first index into t1
 -- Loop:
-    3           : 0x14800; -- addi t2, t2, 1    (00000001 010 010 0000000 000)
-    4           : 0xB5803; -- beq t2, a1, done  (00001011 010 110 0000000 011)
-    5           : 0x4FC00; -- addi a0, a0, 4    (00000100 111 111 0000000 000)does this need to be 8, as 8-bit not 4-bit
-    6           : 0x09C05; -- lw t4, 0(a0)      (00000000 100 111 0000000 101)
-    7           : 0xA8404; -- blt t4, t1, end   (00001010 100 001 0000000 100)
+    5           : 0x14800; -- addi t2, t2, 1    (00000001 010 010 0000000 000)      Increment the array counter
+    6           : 0xD5C03; -- beq t2, a1, done  (00001101 010 111 0000000 011)      Break to DONE if the end of the array is reached
+    7           : 0x1D800; -- addi a0, a0, 1    (00000001 110 110 0000000 000)      Increment the array pointer by 1 word
+    8           : 0x09805; -- lw t4, 0(a0)      (00000000 100 110 0000000 101)      Load the value at the array pointer into t4
+    9           : 0xC8404; -- blt t4, t1, end   (00001100 100 001 0000000 100)      Break to END if the current minimum does not need to be updated
 -- StoreSmallest
-    8           : 0x03C05; -- lw t1, 0(a0)      (00000000 001 111 0000000 101)
-    9           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)
+    10           : 0x03805; -- lw t1, 0(a0)      (00000000 001 110 0000000 101)     Store the current minimum value in t1 for comparisons
+    11           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)     Update the current minimum index in t3
 -- End
-    10          : 0x31401; -- jal loop (00000011 000 101 0000000 001)
+    12          : 0x51401; -- jal loop           (00000101 000 101 0000000 001)     Repeat the loop
 -- Done
-    11          : 0xEC00;  -- addi a0, t3, 0 (00000000 111 011 0000000 000)
-    [12..255]   : 0;
+    13          : 0x0CC00; -- addi a0, t3, 0    (00000000 110 011 0000000 000)     Store the index of the smallest value in a0
+    [14..255]   : 0;
 END;
