@@ -1,0 +1,29 @@
+%
+Notes
+Register 0 will be address of the data vector(a0)
+Register 1 will be number of number of elements in the data vector (a1)
+%
+-- single-line comment
+DEPTH = 256; -- The size of memory in words
+WIDTH = 8; -- The size of data in bits 
+ADDRESS_RADIX = UNS; -- The radix for address values 
+DATA_RADIX = UNS; -- The radix for data values 
+CONTENT -- start of (address : data pairs) 
+BEGIN
+	0  		:   2;
+	1  		:   13;
+	2  		:   54;
+	3  		:   98;
+	4  		:   45;
+	5  		:   20;	
+	6  		:   10;
+	7  		:   5;
+	8  		:   99;
+	9  		:   34;
+	10 		:   1;
+	11 		:   78;
+	12 		:   3;
+	13 		:   98;
+	14 		:   69;
+	[15..255]	:   0;
+END;

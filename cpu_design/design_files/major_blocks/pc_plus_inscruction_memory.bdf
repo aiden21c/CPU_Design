@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,77 +16,76 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect -64 48 104 64)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clk" (rect 5 0 20 12)(font "Arial" ))
-	(pt 168 8)
+	(rect -64 48 112 64)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "clk" (rect 9 0 23 12)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect -64 80 104 96)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "pc_func[1..0]" (rect 5 0 72 12)(font "Arial" ))
-	(pt 168 8)
+	(rect -64 80 112 96)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "pc_func[1..0]" (rect 9 0 75 12)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect -64 112 104 128)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "k[7..0]" (rect 5 0 35 17)(font "Intel Clear" ))
-	(pt 168 8)
+	(rect -64 112 112 128)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "k[7..0]" (rect 9 0 40 12)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect -64 144 104 160)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "imm[7..0]" (rect 5 0 50 17)(font "Intel Clear" ))
-	(pt 168 8)
+	(rect -64 144 112 160)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "imm[7..0]" (rect 9 0 56 12)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
-	(rect 640 200 818 216)
+	(rect 640 200 816 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "instruction[23..0]" (rect 90 0 172 12)(font "Arial" ))
 	(pt 0 8)
@@ -189,7 +188,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 408 264 440 280)
 	(text "VCC" (rect 5 6 25 16)(font "Arial" (font_size 6)))
-	(text "inst3" (rect 7 -6 29 11)(font "Intel Clear" )(invisible))
+	(text "inst3" (rect 6 -1 29 11)(font "Arial" )(invisible))
 	(port
 		(pt 16 0)
 		(output)
@@ -219,21 +218,8 @@ https://fpgasoftware.intel.com/eula.
 	(pt 424 264)
 )
 (connector
-	(pt 104 88)
-	(pt 160 88)
-	(bus)
-)
-(connector
 	(pt 144 56)
 	(pt 144 272)
-)
-(connector
-	(pt 104 56)
-	(pt 144 56)
-)
-(connector
-	(pt 144 56)
-	(pt 408 56)
 )
 (connector
 	(pt 160 88)
@@ -258,11 +244,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 144 272)
 	(pt 240 272)
-)
-(connector
-	(pt 104 120)
-	(pt 128 120)
-	(bus)
 )
 (connector
 	(pt 240 240)
@@ -299,5 +280,40 @@ https://fpgasoftware.intel.com/eula.
 	(pt 640 208)
 	(bus)
 )
+(connector
+	(pt 104 56)
+	(pt 112 56)
+)
+(connector
+	(pt 112 56)
+	(pt 144 56)
+)
+(connector
+	(pt 144 56)
+	(pt 408 56)
+)
+(connector
+	(pt 104 88)
+	(pt 112 88)
+	(bus)
+)
+(connector
+	(pt 112 88)
+	(pt 160 88)
+	(bus)
+)
+(connector
+	(pt 104 120)
+	(pt 112 120)
+	(bus)
+)
+(connector
+	(pt 112 120)
+	(pt 128 120)
+	(bus)
+)
 (junction (pt 144 56))
 (junction (pt 160 208))
+(junction (pt 112 88))
+(junction (pt 112 56))
+(junction (pt 112 120))

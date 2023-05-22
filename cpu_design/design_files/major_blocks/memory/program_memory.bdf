@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,8 +16,7 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -208,7 +207,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"LPM_FILE"
-		"program_memory.mif"
+		"E:/EEET2261_CPU_Design/cpu_design/resources/program_memory.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -216,10 +215,10 @@ https://fpgasoftware.intel.com/eula.
 		"\"REGISTERED\""
 		"Should the write data be registered?"
 		"\"REGISTERED\"" "\"UNREGISTERED\"" 
-	)
+		(type "PARAMETER_STRING")	)
 	(parameter
 		"LPM_NUMWORDS"
-		"2^LPM_WIDTHAD"
+		"256"
 		"Number of memory words, default is 2^LPM_WIDTHAD"
 		"2^LPM_WIDTHAD" 
 	)
@@ -228,13 +227,13 @@ https://fpgasoftware.intel.com/eula.
 		"\"UNREGISTERED\""
 		"Should the output data be registered?"
 		"\"REGISTERED\"" "\"UNREGISTERED\"" 
-	)
+		(type "PARAMETER_STRING")	)
 	(parameter
 		"LPM_RDADDRESS_CONTROL"
 		"\"REGISTERED\""
 		"Should the rdaddress and rden ports be registered?"
 		"\"REGISTERED\"" "\"UNREGISTERED\"" 
-	)
+		(type "PARAMETER_STRING")	)
 	(parameter
 		"LPM_WIDTH"
 		"8"
@@ -252,7 +251,7 @@ https://fpgasoftware.intel.com/eula.
 		"\"REGISTERED\""
 		"Should the wraddress and wren ports be registered?"
 		"\"REGISTERED\"" "\"UNREGISTERED\"" 
-	)
+		(type "PARAMETER_STRING")	)
 	(parameter
 		"USE_EAB"
 		""
@@ -265,7 +264,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 168)(pt 16 16))
 		(line (pt 144 168)(pt 144 16))
 	)
-	(annotation_block (parameter)(rect 672 56 977 246))
+	(annotation_block (parameter)(rect 672 56 1245 246))
 )
 (connector
 	(pt 512 304)
