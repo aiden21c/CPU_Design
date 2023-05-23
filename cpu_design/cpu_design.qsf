@@ -57,6 +57,11 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name SEARCH_PATH "e:\\eeet2261_cpu_design\\cpu_design\\design_files"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name BSF_FILE design_files/clock/half_clock.bsf
+set_global_assignment -name BDF_FILE design_files/clock/half_clock.bdf
 set_global_assignment -name BSF_FILE design_files/comparators/comparator_signed8bit.bsf
 set_global_assignment -name BDF_FILE design_files/comparators/comparator_signed8bit.bdf
 set_global_assignment -name BSF_FILE design_files/comparators/comparator_signed4bit.bsf
@@ -130,9 +135,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
 set_global_assignment -name MIF_FILE resources/program_memory.mif
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
 set_global_assignment -name BDF_FILE design_files/flip_flops/d_flip_flop_3bit.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE ../major_blocks/pc_plus_inscruction_memory/Waveform.vwf
