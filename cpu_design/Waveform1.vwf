@@ -1,12 +1,12 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off cpu_design -c cpu_design --vector_source="C:/scratch/EEET2261_CPU_Design/cpu_design/Waveform.vwf" --testbench_file="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off cpu_design -c cpu_design --vector_source="C:/scratch/EEET2261_CPU_Design/cpu_design/Waveform.vwf" --testbench_file="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off cpu_design -c cpu_design --vector_source="C:/scratch/EEET2261_CPU_Design/cpu_design/Waveform1.vwf" --testbench_file="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/Waveform1.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off cpu_design -c cpu_design --vector_source="C:/scratch/EEET2261_CPU_Design/cpu_design/Waveform1.vwf" --testbench_file="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/Waveform1.vwf.vt"</ttestbench_cmd>
 <fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/" cpu_design -c cpu_design</fnetlist_cmd>
 <tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/scratch/EEET2261_CPU_Design/cpu_design/simulation/qsim/" cpu_design -c cpu_design</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work cpu_design.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work Waveform1.vwf.vt
 vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.beq_vlg_vec_tst
 vcd file -direction cpu_design.msim.vcd
 vcd add -internal beq_vlg_vec_tst/*
@@ -24,7 +24,7 @@ quit -f
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work cpu_design.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work Waveform1.vwf.vt
 vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.beq_vlg_vec_tst
 vcd file -direction cpu_design.msim.vcd
 vcd add -internal beq_vlg_vec_tst/*
@@ -566,7 +566,7 @@ TRANSITION_LIST("pc_func")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -575,7 +575,7 @@ TRANSITION_LIST("pc_func[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 

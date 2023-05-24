@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 152 144)
+	(rect 16 16 160 144)
 	(text "ALU_8bit" (rect 5 0 61 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 107 24 124)(font "Intel Clear" ))
 	(port
@@ -52,27 +52,34 @@ refer to the applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80))
 	)
 	(port
-		(pt 136 32)
+		(pt 144 32)
 		(output)
 		(text "Result" (rect 0 0 36 19)(font "Intel Clear" (font_size 8)))
-		(text "Result" (rect 79 27 115 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 136 32)(pt 120 32))
+		(text "Result" (rect 87 27 123 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 32)(pt 128 32))
 	)
 	(port
-		(pt 136 48)
+		(pt 144 48)
 		(output)
 		(text "F[7..0]" (rect 0 0 37 19)(font "Intel Clear" (font_size 8)))
-		(text "F[7..0]" (rect 78 43 115 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 136 48)(pt 120 48)(line_width 3))
+		(text "F[7..0]" (rect 86 43 123 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 48)(pt 128 48)(line_width 3))
 	)
 	(port
-		(pt 136 64)
+		(pt 144 64)
+		(output)
+		(text "bc[1..0]" (rect 0 0 44 19)(font "Intel Clear" (font_size 8)))
+		(text "bc[1..0]" (rect 79 59 123 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 64)(pt 128 64)(line_width 3))
+	)
+	(port
+		(pt 144 80)
 		(output)
 		(text "Cout" (rect 0 0 27 19)(font "Intel Clear" (font_size 8)))
-		(text "Cout" (rect 88 59 115 78)(font "Intel Clear" (font_size 8)))
-		(line (pt 136 64)(pt 120 64))
+		(text "Cout" (rect 96 75 123 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 80)(pt 128 80))
 	)
 	(drawing
-		(rectangle (rect 16 16 120 112))
+		(rectangle (rect 16 16 128 112))
 	)
 )

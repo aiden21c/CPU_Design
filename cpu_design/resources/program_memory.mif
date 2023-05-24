@@ -11,10 +11,10 @@ DATA_RADIX = UNS; -- The radix for data values
 CONTENT -- start of (address : data pairs) 
 BEGIN
 	0		:	16;			-- Store the first out of bounds index
-	1  		:   2;			-- The first element in the array
+	1  		:   12;			-- The first element in the array
 	2  		:   13;
 	3  		:   54;
-	4  		:   98;
+	4  		:   7;
 	5  		:   45;
 	6  		:   20;	
 	7  		:   10;
