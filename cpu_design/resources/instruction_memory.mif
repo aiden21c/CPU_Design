@@ -15,17 +15,17 @@ BEGIN
     0           : 0x0FC05; -- lw, a1, 0(a1)     (00000000 111 111 0000000 101)      Store the index of the last value in the array into a1
     1           : 0x1D800; -- addi, a0, a0, 1   (00000001 110 110 0000000 000)      Set the pointer to the first value in memory in a0 to be 1
     2           : 0x04800; -- addi t2, t2, 0   	(00000000 010 010 0000000 000)      Start the counter for the loop (t2) at zero
-    3           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)      Set the current smallest index to the first element
+    3           : 0x06808; -- addi t3, t2, 0    (00000000 011 010 0000001 000)      Set the current smallest index to the first element
     4           : 0x03805; -- lw t1, 0(a0)      (00000000 001 110 0000000 101)      Load the value stored at the first index into t1
 -- Loop:
     5           : 0x14800; -- addi t2, t2, 1    (00000001 010 010 0000000 000)      Increment the array counter
-    6           : 0xD5C03; -- beq t2, a1, done  (00001101 010 111 0000000 011)      Break to DONE if the end of the array is reached
+    6           : 0xD5C0B; -- beq t2, a1, done  (00001101 010 111 0000001 011)      Break to DONE if the end of the array is reached
     7           : 0x1D800; -- addi a0, a0, 1    (00000001 110 110 0000000 000)      Increment the array pointer by 1 word
     8           : 0x09805; -- lw t4, 0(a0)      (00000000 100 110 0000000 101)      Load the value at the array pointer into t4
-    9           : 0xC8404; -- blt t4, t1, end   (00001100 100 001 0000000 100)      Break to END if the current minimum does not need to be updated
+    9           : 0xC840C; -- blt t4, t1, end   (00001100 100 001 0000001 100)      Break to END if the current minimum does not need to be updated
 -- StoreSmallest
     10           : 0x03805; -- lw t1, 0(a0)      (00000000 001 110 0000000 101)     Store the current minimum value in t1 for comparisons
-    11           : 0x06800; -- addi t3, t2, 0    (00000000 011 010 0000000 000)     Update the current minimum index in t3
+    11           : 0x06808; -- addi t3, t2, 0    (00000000 011 010 0000001 000)     Update the current minimum index in t3
 -- End
     12          : 0x51401; -- jal loop           (00000101 000 101 0000000 001)     Repeat the loop
 -- Done
