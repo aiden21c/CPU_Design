@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,7 +16,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -104,6 +105,22 @@ refer to the applicable agreement for further details.
 	(rect 976 200 1152 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "instruction[23..0]" (rect 90 0 172 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 992 80 1168 96)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "PC[7..0]" (rect 90 0 131 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -423,11 +440,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 544 88)
-	(pt 504 88)
-	(bus)
-)
-(connector
 	(pt 504 88)
 	(pt 504 208)
 	(bus)
@@ -575,6 +587,16 @@ refer to the applicable agreement for further details.
 	(pt 128 120)
 	(bus)
 )
+(connector
+	(pt 504 88)
+	(pt 544 88)
+	(bus)
+)
+(connector
+	(pt 544 88)
+	(pt 992 88)
+	(bus)
+)
 (junction (pt 160 208))
 (junction (pt 112 88))
 (junction (pt 112 56))
@@ -584,3 +606,4 @@ refer to the applicable agreement for further details.
 (junction (pt 376 -128))
 (junction (pt 256 -152))
 (junction (pt 256 -200))
+(junction (pt 544 88))
