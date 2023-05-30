@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,8 +16,7 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -265,6 +264,56 @@ https://fpgasoftware.intel.com/eula.
 	(rect 176 56 352 72)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "pcfunction[1..0]" (rect 90 0 167 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 672 -128 848 -112)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "RA2[2..0]" (rect 5 0 52 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 584 -24 760 -8)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "WA[2..0]" (rect 5 0 48 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 1248 32 1424 48)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "alu_B[7..0]" (rect 90 0 143 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -650,7 +699,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 1120 64 1248 160)
+	(rect 1096 64 1224 160)
 	(text "multiplexer_2way_8bit" (rect 5 0 143 19)(font "Intel Clear" (font_size 8)))
 	(text "inst13" (rect 8 75 36 92)(font "Intel Clear" ))
 	(port
@@ -783,7 +832,7 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "OP[6..5]" (rect 1198 104 1236 121)(font "Intel Clear" ))
+	(text "OP[6..5]" (rect 1158 160 1196 177)(font "Intel Clear" ))
 	(pt 1240 120)
 	(pt 1152 120)
 	(bus)
@@ -794,7 +843,7 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "OP[0]" (rect 1160 176 1188 193)(font "Intel Clear" ))
+	(text "OP[0]" (rect 1248 184 1276 201)(font "Intel Clear" ))
 	(pt 1424 192)
 	(pt 1152 192)
 )
@@ -845,12 +894,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1480 -8)
 	(pt 1824 -8)
-	(bus)
-)
-(connector
-	(text "Q[15..13]" (rect 888 19 905 62)(font "Intel Clear" )(vertical))
-	(pt 904 64)
-	(pt 904 -40)
 	(bus)
 )
 (connector
@@ -1193,29 +1236,8 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "Q[23..16]" (rect 1017 80 1060 97)(font "Intel Clear" ))
-	(pt 968 96)
-	(pt 1072 96)
-	(bus)
-)
-(connector
-	(pt 1072 96)
-	(pt 1120 96)
-	(bus)
-)
-(connector
 	(pt 1088 48)
 	(pt 1168 48)
-	(bus)
-)
-(connector
-	(pt 1088 48)
-	(pt 1088 112)
-	(bus)
-)
-(connector
-	(pt 1120 112)
-	(pt 1088 112)
 	(bus)
 )
 (connector
@@ -1225,25 +1247,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1208 128)
 	(pt 1208 264)
-)
-(connector
-	(pt 712 64)
-	(pt 744 64)
-	(bus)
-)
-(connector
-	(pt 744 64)
-	(pt 784 64)
-	(bus)
-)
-(connector
-	(pt 1120 128)
-	(pt 744 128)
-)
-(connector
-	(text "Q[3]" (rect 728 94 745 115)(font "Intel Clear" )(vertical))
-	(pt 744 64)
-	(pt 744 128)
 )
 (connector
 	(pt 176 64)
@@ -1326,17 +1329,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 520 64)
-	(pt 680 64)
-	(bus)
-)
-(connector
-	(text "Q[23..0]" (rect 683 48 720 65)(font "Intel Clear" ))
-	(pt 680 64)
-	(pt 712 64)
-	(bus)
-)
-(connector
 	(pt 984 -24)
 	(pt 920 -24)
 	(bus)
@@ -1352,9 +1344,118 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "Q[12..10]" (rect 904 11 921 54)(font "Intel Clear" )(vertical))
-	(pt 920 -24)
+	(pt 920 0)
+	(pt 872 0)
+	(bus)
+)
+(connector
+	(pt 872 0)
+	(pt 872 -120)
+	(bus)
+)
+(connector
+	(pt 848 -120)
+	(pt 872 -120)
+	(bus)
+)
+(connector
+	(text "Q[12..10]" (rect 896 11 913 54)(font "Intel Clear" )(vertical))
+	(pt 920 0)
 	(pt 920 64)
+	(bus)
+)
+(connector
+	(text "Q[12..10]" (rect 896 -45 913 -2)(font "Intel Clear" )(vertical))
+	(pt 920 -24)
+	(pt 920 0)
+	(bus)
+)
+(connector
+	(pt 520 64)
+	(pt 680 64)
+	(bus)
+)
+(connector
+	(text "Q[23..0]" (rect 683 48 720 65)(font "Intel Clear" ))
+	(pt 680 64)
+	(pt 712 64)
+	(bus)
+)
+(connector
+	(pt 760 -16)
+	(pt 904 -16)
+	(bus)
+)
+(connector
+	(text "Q[15..13]" (rect 880 11 897 54)(font "Intel Clear" )(vertical))
+	(pt 904 -16)
+	(pt 904 -40)
+	(bus)
+)
+(connector
+	(text "Q[15..13]" (rect 880 -63 897 -20)(font "Intel Clear" )(vertical))
+	(pt 904 64)
+	(pt 904 -16)
+	(bus)
+)
+(connector
+	(pt 1088 48)
+	(pt 1088 112)
+	(bus)
+)
+(connector
+	(pt 1088 112)
+	(pt 1096 112)
+	(bus)
+)
+(connector
+	(pt 744 128)
+	(pt 1096 128)
+)
+(connector
+	(text "Q[3]" (rect 728 94 745 115)(font "Intel Clear" )(vertical))
+	(pt 744 64)
+	(pt 744 128)
+)
+(connector
+	(text "Q[23..16]" (rect 1017 80 1060 97)(font "Intel Clear" ))
+	(pt 968 96)
+	(pt 1072 96)
+	(bus)
+)
+(connector
+	(pt 1072 96)
+	(pt 1096 96)
+	(bus)
+)
+(connector
+	(pt 712 64)
+	(pt 744 64)
+	(bus)
+)
+(connector
+	(pt 744 64)
+	(pt 784 64)
+	(bus)
+)
+(connector
+	(pt 1248 40)
+	(pt 1240 40)
+	(bus)
+)
+(connector
+	(pt 1240 40)
+	(pt 1240 96)
+	(bus)
+)
+(connector
+	(pt 1248 96)
+	(pt 1240 96)
+	(bus)
+)
+(connector
+	(pt 1240 96)
+	(pt 1224 96)
 	(bus)
 )
 (junction (pt 784 64))
@@ -1370,7 +1471,6 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1440 96))
 (junction (pt 1440 16))
 (junction (pt 1176 232))
-(junction (pt 680 64))
 (junction (pt 712 64))
 (junction (pt 1544 360))
 (junction (pt -304 -32))
@@ -1391,5 +1491,9 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 176 160))
 (junction (pt -328 -32))
 (junction (pt 920 64))
+(junction (pt 920 0))
+(junction (pt 680 64))
+(junction (pt 904 -16))
+(junction (pt 1240 96))
 (text "PC + Instruction Memory" (rect 264 80 485 103)(font "Intel Clear" (font_size 12)(bold)))
 (text "I-Register" (rect 568 96 624 115)(font "Intel Clear" (font_size 8)))
