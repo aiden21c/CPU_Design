@@ -27,10 +27,10 @@ BEGIN
     10           : 0x0C415; -- lw t1, 0(a0)      (00000000 110 001 0000010 101)     Store the current minimum value in t1 for comparisons
     11           : 0x06808; -- addi t3, t2, 0    (00000000 011 010 0000001 000)     Update the current minimum index in t3
 -- End
-    12          : 0x51421; -- jal loop           (00000101 000 101 0000100 001)     Repeat the loop
+    12          : 0x5A021; -- jal loop           (00000101 101 000 0000100 001)     Repeat the loop
 -- Done
     13          : 0x1D800; -- addi a0, a0, 1    (00000001 110 110 0000000 000)      Increment the array pointer by 1 word
-    14          : 0x07806; -- sw t3, 0(a0)      (00000000 011 110 0000000 110)      Store the index of the smallest value from t3 in the next value in ram.
+    14          : 0x0CC16; -- sw t3, 0(a0)      (00000000 110 011 0000010 110)      Store the index of the smallest value from t3 in the next value in ram.
     15          : 0x0D415; -- lw t5, 0(a0)      (00000000 110 101 0000010 101)      Load the value that was just stored in RAM into the t5 register
     [16..255]   : 0;
 END;

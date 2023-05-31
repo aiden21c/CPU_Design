@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,7 +16,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -314,6 +315,22 @@ refer to the applicable agreement for further details.
 	(rect 1248 32 1424 48)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "alu_B[7..0]" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1704 200 1880 216)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "WriteData[7..0]" (rect 90 0 165 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -810,11 +827,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1152 -104)
-	(pt 1216 -104)
-	(bus)
-)
-(connector
 	(pt 984 -72)
 	(pt 912 -72)
 	(bus)
@@ -1221,11 +1233,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1440 96)
-	(pt 1608 96)
-	(bus)
-)
-(connector
 	(pt 1824 -8)
 	(pt 1824 24)
 	(bus)
@@ -1583,6 +1590,66 @@ refer to the applicable agreement for further details.
 	(pt 1160 -72)
 	(pt 1568 -72)
 )
+(connector
+	(pt 1464 -104)
+	(pt 1464 48)
+	(bus)
+)
+(connector
+	(pt 1152 -104)
+	(pt 1216 -104)
+	(bus)
+)
+(connector
+	(pt 1216 -104)
+	(pt 1464 -104)
+	(bus)
+)
+(connector
+	(pt 1464 48)
+	(pt 1576 48)
+	(bus)
+)
+(connector
+	(pt 1440 96)
+	(pt 1560 96)
+	(bus)
+)
+(connector
+	(pt 1560 96)
+	(pt 1608 96)
+	(bus)
+)
+(connector
+	(pt 1576 144)
+	(pt 1608 144)
+	(bus)
+)
+(connector
+	(pt 1576 48)
+	(pt 1576 144)
+	(bus)
+)
+(connector
+	(pt 1608 128)
+	(pt 1560 128)
+	(bus)
+)
+(connector
+	(pt 1560 96)
+	(pt 1560 128)
+	(bus)
+)
+(connector
+	(pt 1560 128)
+	(pt 1560 208)
+	(bus)
+)
+(connector
+	(pt 1560 208)
+	(pt 1704 208)
+	(bus)
+)
 (junction (pt 784 64))
 (junction (pt 1216 16))
 (junction (pt 1424 160))
@@ -1619,5 +1686,8 @@ refer to the applicable agreement for further details.
 (junction (pt 1712 -192))
 (junction (pt 968 64))
 (junction (pt 1504 -232))
+(junction (pt 1216 -104))
+(junction (pt 1560 96))
+(junction (pt 1560 128))
 (text "PC + Instruction Memory" (rect 264 80 485 103)(font "Intel Clear" (font_size 12)(bold)))
 (text "I-Register" (rect 568 96 624 115)(font "Intel Clear" (font_size 8)))
