@@ -117,6 +117,22 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
+	(rect 344 272 360 304)
+	(text "VCC" (rect 0 5 10 25)(font "Arial" (font_size 6))(vertical))
+	(text "inst12" (rect 5 12 17 41)(font "Arial" )(vertical)(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 7 8 19 13)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 16 16)(pt 8 16))
+	)
+	(drawing
+		(line (pt 8 24)(pt 8 8))
+	)
+	(rotate90)
+)
+(symbol
 	(rect 512 248 672 432)
 	(text "LPM_RAM_DP" (rect 41 0 144 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 3 172 20 184)(font "Arial" ))
@@ -192,7 +208,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"LPM_FILE"
-		"RAM01.mif"
+		"resources/RAM01.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -249,23 +265,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 168)(pt 16 16))
 		(line (pt 144 168)(pt 144 16))
 	)
-	(annotation_block (parameter)(rect 672 56 958 246))
-)
-(symbol
-	(rect 344 272 360 304)
-	(text "VCC" (rect 0 5 10 25)(font "Arial" (font_size 6))(vertical))
-	(text "inst12" (rect 5 12 17 41)(font "Arial" )(vertical)(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 7 8 19 13)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 16)(pt 8 16))
-	)
-	(drawing
-		(line (pt 8 24)(pt 8 8))
-	)
-	(rotate90)
+	(annotation_block (parameter)(rect 672 56 975 246))
 )
 (connector
 	(pt 512 304)

@@ -1,8 +1,3 @@
-%
-Notes
-Register 0 will be address of the data vector(a0)
-Register 1 will be number of number of elements in the data vector (a1)
-%
 -- single-line comment
 DEPTH = 256; -- The size of memory in words
 WIDTH = 8; -- The size of data in bits 
@@ -10,8 +5,8 @@ ADDRESS_RADIX = UNS; -- The radix for address values
 DATA_RADIX = UNS; -- The radix for data values 
 CONTENT -- start of (address : data pairs) 
 BEGIN
-	0		:   16;			-- Store the first out of bounds index
-	1  		:   3;			-- The first element in the array
+	0		:   16;
+	1  		:   3;
 	2  		:   10;
 	3  		:   54;
 	4  		:   7;

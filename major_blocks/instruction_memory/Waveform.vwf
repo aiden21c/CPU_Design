@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -74,7 +76,7 @@ HEADER
 	DATA_DURATION = 1000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 10.0;
+	GRID_PERIOD = 100.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -443,15 +445,15 @@ TRANSITION_LIST("CLK")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 10.0;
 		NODE
 		{
-			REPEAT = 4;
-			LEVEL 0 FOR 100.0;
-			LEVEL 1 FOR 100.0;
+			REPEAT = 9;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
 		}
-		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -721,21 +723,12 @@ TRANSITION_LIST("ADDR[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("ADDR[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
 		LEVEL 0 FOR 800.0;
 		LEVEL 1 FOR 200.0;
 	}
 }
 
-TRANSITION_LIST("ADDR[1]")
+TRANSITION_LIST("ADDR[2]")
 {
 	NODE
 	{
@@ -750,7 +743,7 @@ TRANSITION_LIST("ADDR[1]")
 	}
 }
 
-TRANSITION_LIST("ADDR[0]")
+TRANSITION_LIST("ADDR[1]")
 {
 	NODE
 	{
@@ -762,6 +755,20 @@ TRANSITION_LIST("ADDR[0]")
 			LEVEL 1 FOR 200.0;
 		}
 		LEVEL 0 FOR 200.0;
+	}
+}
+
+TRANSITION_LIST("ADDR[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 5;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+		}
 	}
 }
 
@@ -787,7 +794,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4, 5, 6, 7, 8, 9, 10;
@@ -797,7 +804,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -807,7 +814,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -817,7 +824,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -827,7 +834,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -837,7 +844,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -847,7 +854,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -857,7 +864,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -867,7 +874,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "ADDR[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 2;

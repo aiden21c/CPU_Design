@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 152 232 320 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "EN" (rect 5 0 18 17)(font "Intel Clear" ))
+	(text "EN" (rect 5 0 17 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 152 184 320 200)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "ADDR[7..0]" (rect 5 0 63 12)(font "Arial" ))
+	(text "ADDR[7..0]" (rect 5 0 62 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -131,7 +131,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"LPM_FILE"
-		"ROM01.mif"
+		"resources/ROM01.mif"
 		"File containing initial contents of memory array"
 	)
 	(parameter
@@ -163,7 +163,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 96 80)(pt 96 16))
 		(line (pt 16 80)(pt 16 16))
 	)
-	(annotation_block (parameter)(rect 496 32 764 165))
+	(annotation_block (parameter)(rect 496 32 782 165))
 )
 (connector
 	(pt 496 216)

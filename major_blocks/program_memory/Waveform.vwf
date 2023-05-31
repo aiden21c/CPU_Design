@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -74,7 +76,7 @@ HEADER
 	DATA_DURATION = 1000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 200.0;
+	GRID_PERIOD = 100.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -463,15 +465,15 @@ TRANSITION_LIST("CLK")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 10.0;
 		NODE
 		{
-			REPEAT = 4;
-			LEVEL 0 FOR 100.0;
-			LEVEL 1 FOR 100.0;
+			REPEAT = 9;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
 		}
-		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -480,7 +482,8 @@ TRANSITION_LIST("WdEn")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
 		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 200.0;
@@ -529,7 +532,8 @@ TRANSITION_LIST("RdAddr[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 800.0;
+		LEVEL 1 FOR 200.0;
 	}
 }
 
@@ -538,7 +542,9 @@ TRANSITION_LIST("RdAddr[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 400.0;
 	}
 }
 
@@ -547,7 +553,13 @@ TRANSITION_LIST("RdAddr[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 200.0;
+			LEVEL 1 FOR 200.0;
+		}
+		LEVEL 0 FOR 600.0;
 	}
 }
 
@@ -556,7 +568,20 @@ TRANSITION_LIST("RdAddr[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 3;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+		}
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+		}
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
 	}
 }
 
@@ -628,7 +653,12 @@ TRANSITION_LIST("WdAddr[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 500.0;
+			LEVEL 1 FOR 500.0;
+		}
 	}
 }
 
@@ -637,7 +667,7 @@ TRANSITION_LIST("WriteData[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -646,7 +676,7 @@ TRANSITION_LIST("WriteData[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -655,8 +685,7 @@ TRANSITION_LIST("WriteData[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 600.0;
-		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -665,8 +694,8 @@ TRANSITION_LIST("WriteData[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 600.0;
-		LEVEL 0 FOR 400.0;
+		LEVEL 0 FOR 800.0;
+		LEVEL 1 FOR 200.0;
 	}
 }
 
@@ -675,8 +704,8 @@ TRANSITION_LIST("WriteData[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 600.0;
-		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 800.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -685,8 +714,9 @@ TRANSITION_LIST("WriteData[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 600.0;
 		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -695,9 +725,13 @@ TRANSITION_LIST("WriteData[1]")
 	NODE
 	{
 		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 200.0;
+			LEVEL 1 FOR 200.0;
+		}
 		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 400.0;
-		LEVEL 0 FOR 400.0;
 	}
 }
 
@@ -708,11 +742,10 @@ TRANSITION_LIST("WriteData[0]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 2;
-			LEVEL 1 FOR 200.0;
-			LEVEL 0 FOR 200.0;
+			REPEAT = 5;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
 		}
-		LEVEL 1 FOR 200.0;
 	}
 }
 
@@ -810,7 +843,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4, 5, 6, 7, 8, 9, 10;
@@ -820,7 +853,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -830,7 +863,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -840,7 +873,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -850,7 +883,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -860,7 +893,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -870,7 +903,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -880,7 +913,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -890,7 +923,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RdAddr[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -898,9 +931,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr";
+	CHANNEL = "D_Out";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 0;
 	CHILDREN = 12, 13, 14, 15, 16, 17, 18, 19;
@@ -908,9 +941,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[7]";
+	CHANNEL = "D_Out[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -918,9 +951,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[6]";
+	CHANNEL = "D_Out[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -928,9 +961,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[5]";
+	CHANNEL = "D_Out[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -938,9 +971,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[4]";
+	CHANNEL = "D_Out[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -948,9 +981,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[3]";
+	CHANNEL = "D_Out[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -958,9 +991,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[2]";
+	CHANNEL = "D_Out[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -968,9 +1001,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[1]";
+	CHANNEL = "D_Out[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -978,9 +1011,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WdAddr[0]";
+	CHANNEL = "D_Out[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 19;
 	TREE_LEVEL = 1;
 	PARENT = 11;
@@ -988,9 +1021,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData";
+	CHANNEL = "WdAddr";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 20;
 	TREE_LEVEL = 0;
 	CHILDREN = 21, 22, 23, 24, 25, 26, 27, 28;
@@ -998,9 +1031,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[7]";
+	CHANNEL = "WdAddr[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 21;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1008,9 +1041,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[6]";
+	CHANNEL = "WdAddr[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 22;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1018,9 +1051,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[5]";
+	CHANNEL = "WdAddr[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 23;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1028,9 +1061,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[4]";
+	CHANNEL = "WdAddr[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 24;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1038,9 +1071,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[3]";
+	CHANNEL = "WdAddr[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 25;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1048,9 +1081,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[2]";
+	CHANNEL = "WdAddr[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 26;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1058,9 +1091,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[1]";
+	CHANNEL = "WdAddr[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 27;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1068,9 +1101,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "WriteData[0]";
+	CHANNEL = "WdAddr[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 28;
 	TREE_LEVEL = 1;
 	PARENT = 20;
@@ -1078,9 +1111,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out";
+	CHANNEL = "WriteData";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 29;
 	TREE_LEVEL = 0;
 	CHILDREN = 30, 31, 32, 33, 34, 35, 36, 37;
@@ -1088,9 +1121,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[7]";
+	CHANNEL = "WriteData[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 30;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1098,9 +1131,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[6]";
+	CHANNEL = "WriteData[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 31;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1108,9 +1141,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[5]";
+	CHANNEL = "WriteData[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 32;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1118,9 +1151,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[4]";
+	CHANNEL = "WriteData[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 33;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1128,9 +1161,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[3]";
+	CHANNEL = "WriteData[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 34;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1138,9 +1171,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[2]";
+	CHANNEL = "WriteData[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 35;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1148,9 +1181,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[1]";
+	CHANNEL = "WriteData[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 36;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1158,9 +1191,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_Out[0]";
+	CHANNEL = "WriteData[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 37;
 	TREE_LEVEL = 1;
 	PARENT = 29;

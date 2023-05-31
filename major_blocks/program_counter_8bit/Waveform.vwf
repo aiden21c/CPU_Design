@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -74,7 +76,7 @@ HEADER
 	DATA_DURATION = 1000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 250.0;
+	GRID_PERIOD = 125.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -388,12 +390,15 @@ TRANSITION_LIST("CLK")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
 		NODE
 		{
-			REPEAT = 4;
-			LEVEL 0 FOR 125.0;
-			LEVEL 1 FOR 125.0;
+			REPEAT = 7;
+			LEVEL 1 FOR 62.5;
+			LEVEL 0 FOR 62.5;
 		}
+		LEVEL 1 FOR 62.5;
+		LEVEL 0 FOR 52.5;
 	}
 }
 
@@ -555,10 +560,12 @@ TRANSITION_LIST("PCSrc")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 250.0;
-		LEVEL 0 FOR 250.0;
-		LEVEL 1 FOR 250.0;
-		LEVEL 0 FOR 250.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 500.0;
+			LEVEL 1 FOR 500.0;
+		}
 	}
 }
 
@@ -567,8 +574,12 @@ TRANSITION_LIST("PCWrite")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
-		LEVEL 0 FOR 500.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 250.0;
+			LEVEL 1 FOR 250.0;
+		}
 	}
 }
 
@@ -613,7 +624,7 @@ TRANSITION_LIST("k[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -640,7 +651,7 @@ TRANSITION_LIST("k[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -845,7 +856,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "PCWrite";
+	CHANNEL = "PCSrc";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 20;
@@ -855,7 +866,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "PCSrc";
+	CHANNEL = "PCWrite";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 21;

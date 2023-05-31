@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,7 +16,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -378,7 +379,7 @@ refer to the applicable agreement for further details.
 		(pt 64 24)
 		(output)
 		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 62 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
 		(line (pt 43 24)(pt 64 24))
 	)
 	(drawing
@@ -403,7 +404,7 @@ refer to the applicable agreement for further details.
 		(pt 48 16)
 		(output)
 		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 46 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
 		(line (pt 39 16)(pt 48 16))
 	)
 	(drawing
@@ -498,14 +499,42 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 112 80))
 	)
 )
+(symbol
+	(rect 168 288 232 336)
+	(text "OR2" (rect 1 0 19 10)(font "Arial" (font_size 6)))
+	(text "inst10" (rect 3 37 31 54)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
 (connector
 	(pt 144 56)
 	(pt 144 272)
-)
-(connector
-	(pt 160 88)
-	(pt 160 208)
-	(bus)
 )
 (connector
 	(pt 144 272)
@@ -532,11 +561,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "pc_func[0]" (rect 167 208 216 225)(font "Intel Clear" ))
-	(pt 160 224)
-	(pt 240 224)
-)
-(connector
 	(pt 408 56)
 	(pt 408 224)
 )
@@ -551,16 +575,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 408 224)
 	(pt 504 224)
-)
-(connector
-	(text "pc_func[1]" (rect 165 192 214 209)(font "Intel Clear" ))
-	(pt 160 208)
-	(pt 240 208)
-)
-(connector
-	(pt 160 208)
-	(pt 160 224)
-	(bus)
 )
 (connector
 	(pt 672 208)
@@ -718,18 +732,6 @@ refer to the applicable agreement for further details.
 	(pt -240 432)
 )
 (connector
-	(text "D[2]" (rect -27 -240 -7 -223)(font "Intel Clear" ))
-	(pt 48 -224)
-	(pt -128 -224)
-	(bus)
-)
-(connector
-	(text "D[7..3],D[1..0]" (rect -120 -192 -57 -175)(font "Intel Clear" ))
-	(pt 40 -176)
-	(pt -128 -176)
-	(bus)
-)
-(connector
 	(pt -128 -328)
 	(pt -128 -224)
 	(bus)
@@ -790,11 +792,6 @@ refer to the applicable agreement for further details.
 	(pt -336 200)
 )
 (connector
-	(pt -312 368)
-	(pt -304 368)
-	(bus)
-)
-(connector
 	(pt -24 376)
 	(pt 40 376)
 	(bus)
@@ -810,18 +807,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -144 416)
-	(pt 40 416)
-)
-(connector
 	(pt 40 416)
 	(pt 40 408)
-)
-(connector
-	(text "B[1..0]" (rect -51 376 -21 393)(font "Intel Clear" ))
-	(pt -304 392)
-	(pt 40 392)
-	(bus)
 )
 (connector
 	(pt -24 312)
@@ -831,17 +818,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -24 320)
 	(pt -24 376)
-	(bus)
-)
-(connector
-	(text "B[1..0]" (rect -320 332 -303 362)(font "Intel Clear" )(vertical))
-	(pt -304 232)
-	(pt -304 368)
-	(bus)
-)
-(connector
-	(pt -304 368)
-	(pt -304 392)
 	(bus)
 )
 (connector
@@ -886,7 +862,78 @@ refer to the applicable agreement for further details.
 	(pt 128 120)
 	(bus)
 )
-(junction (pt 160 208))
+(connector
+	(text "<<__$DEF_ALIAS719>>" (rect -51 376 61 393)(font "Intel Clear" )(invisible))
+	(pt -304 392)
+	(pt 40 392)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS721>>" (rect -319 331 -302 443)(font "Intel Clear" )(vertical)(invisible))
+	(pt -304 232)
+	(pt -304 392)
+	(bus)
+)
+(connector
+	(text "D[7..3],D[1]" (rect -120 -192 -67 -175)(font "Intel Clear" ))
+	(pt 40 -176)
+	(pt -128 -176)
+	(bus)
+)
+(connector
+	(text "D[2],D[0]" (rect -27 -240 15 -223)(font "Intel Clear" ))
+	(pt 48 -224)
+	(pt -128 -224)
+	(bus)
+)
+(connector
+	(pt 0 416)
+	(pt 0 320)
+)
+(connector
+	(pt 0 320)
+	(pt 168 320)
+)
+(connector
+	(pt -144 416)
+	(pt 0 416)
+)
+(connector
+	(pt 0 416)
+	(pt 40 416)
+)
+(connector
+	(text "pc_func[0]" (rect 117 288 166 305)(font "Intel Clear" ))
+	(pt 160 304)
+	(pt 168 304)
+)
+(connector
+	(pt 240 224)
+	(pt 232 224)
+)
+(connector
+	(pt 232 224)
+	(pt 232 312)
+)
+(connector
+	(pt 160 224)
+	(pt 160 304)
+)
+(connector
+	(pt 160 88)
+	(pt 160 208)
+	(bus)
+)
+(connector
+	(pt 160 208)
+	(pt 160 224)
+	(bus)
+)
+(connector
+	(text "pc_func[1]" (rect 167 192 216 209)(font "Intel Clear" ))
+	(pt 160 208)
+	(pt 240 208)
+)
 (junction (pt 112 88))
 (junction (pt 112 56))
 (junction (pt 112 120))
@@ -903,5 +950,6 @@ refer to the applicable agreement for further details.
 (junction (pt -128 -224))
 (junction (pt -128 -176))
 (junction (pt 112 200))
-(junction (pt -304 368))
+(junction (pt 0 416))
+(junction (pt 160 208))
 (text "D[7..0]" (rect -104 -98 -87 -68)(font "Intel Clear" )(vertical))
