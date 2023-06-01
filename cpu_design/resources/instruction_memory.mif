@@ -22,15 +22,14 @@ BEGIN
     6           : 0xE5C0B; -- beq t2, a1, done  (00001101 010 111 0000001 011)      Break to DONE if the end of the array is reached
     7           : 0x1D800; -- addi a0, a0, 1    (00000001 110 110 0000000 000)      Increment the array pointer by 1 word
     8           : 0x0D055; -- lw t4, 0(a0)      (00000000 110 100 0001010 101)      Load the value at the array pointer into t4
-    9           : 0xD840C; -- blt t4, t1, end   (00001100 100 001 0000001 100)      Break to END if the current minimum does not need to be updated
+    9           : 0x5300C; -- blt t4, t1, loop  (00000101 001 100 0000001 100)      Break to END if the current minimum does not need to be updated
 -- StoreSmallest
     10           : 0x0C455; -- lw t1, 0(a0)     (00000000 110 001 0001010 101)     Store the current minimum value in t1 for comparisons
     11           : 0x06808; -- addi t3, t2, 0   (00000000 011 010 0000001 000)     Update the current minimum index in t3
--- End
-    12          : 0x5A021; -- jal loop          (00000101 101 000 0000100 001)     Repeat the loop
+    12		 : 0x51604; -- jal loop         (00000101 000 101 1000000 100)     Repeat the loop	
 -- Done
     13          : 0x1D800; -- addi a0, a0, 1    (00000001 110 110 0000000 000)      Increment the array pointer by 1 word
     14          : 0x0CC16; -- sw t3, 0(a0)      (00000000 110 011 0000010 110)      Store the index of the smallest value from t3 in the next value in ram.
     15          : 0x0DC15; -- a1 t5, 0(a0)      (00000000 110 111 0000010 101)      Load the value that was just stored in RAM into the a1 register
-    [16..255]   : 0;
+    [15..255]   : 0;
 END;
