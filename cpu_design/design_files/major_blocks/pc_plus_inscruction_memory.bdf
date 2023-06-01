@@ -570,18 +570,6 @@ refer to the applicable agreement for further details.
 	(pt 224 304)
 )
 (connector
-	(text "B[2],B[0]" (rect 98 -216 140 -199)(font "Intel Clear" ))
-	(pt 256 -200)
-	(pt 88 -200)
-	(bus)
-)
-(connector
-	(text "B[7..3],B[1]" (rect 203 -168 256 -151)(font "Intel Clear" ))
-	(pt 256 -152)
-	(pt 96 -152)
-	(bus)
-)
-(connector
 	(pt 408 56)
 	(pt 408 224)
 )
@@ -708,6 +696,18 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 368 120)
 	(pt 416 120)
+	(bus)
+)
+(connector
+	(text "B[2..1]" (rect 98 -216 128 -199)(font "Intel Clear" ))
+	(pt 256 -200)
+	(pt 88 -200)
+	(bus)
+)
+(connector
+	(text "B[7..3],B[0]" (rect 203 -168 256 -151)(font "Intel Clear" ))
+	(pt 256 -152)
+	(pt 96 -152)
 	(bus)
 )
 (junction (pt 112 56))
