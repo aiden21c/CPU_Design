@@ -86,22 +86,6 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 1312 224 1488 240)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "b[7..0]" (rect 90 0 121 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 1240 8 1416 24)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "RD1[7..0]" (rect 90 0 138 12)(font "Arial" ))
@@ -214,22 +198,6 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 544 200 720 216)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "i_reg[23..0]" (rect 90 0 145 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 1264 200 1440 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "alu_op[1..0]" (rect 90 0 147 12)(font "Arial" ))
@@ -315,6 +283,22 @@ https://fpgasoftware.intel.com/eula.
 	(rect 464 0 640 16)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "PC_OUT[7..0]" (rect 90 0 159 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1072 320 1248 336)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "IMM[7..0]" (rect 90 0 136 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -960,11 +944,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -120 -32)
 )
 (connector
-	(pt 1176 328)
-	(pt 136 328)
-	(bus)
-)
-(connector
 	(pt 24 144)
 	(pt 184 144)
 )
@@ -999,11 +978,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1592 392)
 	(pt -304 392)
-)
-(connector
-	(pt 1176 232)
-	(pt 1176 328)
-	(bus)
 )
 (connector
 	(pt -120 -32)
@@ -1053,11 +1027,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 520 208)
-	(pt 544 208)
-	(bus)
-)
-(connector
 	(pt 1264 208)
 	(pt 1240 208)
 	(bus)
@@ -1073,16 +1042,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 1072 232)
-	(pt 1176 232)
-	(bus)
-)
-(connector
-	(pt 1176 232)
-	(pt 1312 232)
-	(bus)
-)
-(connector
 	(pt 1152 -88)
 	(pt 1168 -88)
 	(bus)
@@ -1090,12 +1049,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1168 -88)
 	(pt 1264 -88)
-	(bus)
-)
-(connector
-	(text "Q[23..16]" (rect 1056 179 1073 222)(font "Intel Clear" )(vertical))
-	(pt 1072 96)
-	(pt 1072 232)
 	(bus)
 )
 (connector
@@ -1359,11 +1312,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 520 160)
-	(pt 520 208)
-	(bus)
-)
-(connector
 	(pt 1712 -152)
 	(pt 1696 -152)
 	(bus)
@@ -1595,6 +1543,17 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1560 128)
 	(bus)
 )
+(connector
+	(pt 136 328)
+	(pt 1072 328)
+	(bus)
+)
+(connector
+	(text "Q[23..16]" (rect 1056 179 1073 222)(font "Intel Clear" )(vertical))
+	(pt 1072 96)
+	(pt 1072 328)
+	(bus)
+)
 (junction (pt 784 64))
 (junction (pt 1216 16))
 (junction (pt 1152 192))
@@ -1603,7 +1562,6 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1824 24))
 (junction (pt 1440 96))
 (junction (pt 1440 16))
-(junction (pt 1176 232))
 (junction (pt 712 64))
 (junction (pt -304 -32))
 (junction (pt -120 -32))
@@ -1624,7 +1582,6 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 872 64))
 (junction (pt 872 0))
 (junction (pt 840 -40))
-(junction (pt 520 160))
 (junction (pt 1712 -192))
 (junction (pt 968 64))
 (junction (pt 1504 -232))
@@ -1633,4 +1590,3 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1576 96))
 (junction (pt 1168 -40))
 (text "PC + Instruction Memory" (rect 264 80 485 103)(font "Intel Clear" (font_size 12)(bold)))
-(text "I-Register" (rect 568 96 624 115)(font "Intel Clear" (font_size 8)))
